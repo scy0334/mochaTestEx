@@ -36,30 +36,30 @@ describe("Uncomment Test", function() {
         // 36번 라인과 같이 function을 생성하고 그 function이 올바른 값을 리턴하는지 확인하시면 됩니다.
         // (주석을 삭제해보고 testrunner.html을 확인해주세요)
         // findLargestPrimeFactor(20).should.equal(5);
+        throw new Error;  //it을 작성할 때부터는 throw new Error를 지워주시면 됩니다.
       })
 
     it("should find the largest palindrome made from the product of two 3 digit numbers", function () {
       // 2번 문제
       // 3자릿 수 두 개를 곱하여 가장 큰 Palindrome 값은 906609입니다.
-      
+      throw new Error; //it을 작성할 때부터는 throw new Error를 지워주시면 됩니다.
     })
     
     it("should find the smallest number divisible by each of the numbers 1 to 20", function() {
       // 3번 문제 : 최소공배수를 구하는 문제입니다.  20을 입력받았을 때 232792560 값이 리턴되어야 합니다.
-      
+      throw new Error; //it을 작성할 때부터는 throw new Error를 지워주시면 됩니다.
     });
     
     it("should find the difference between the sum of the squares and the square of the sums", function () {
       // 4번 문제
       // 20이라는 값을 함수가 인자값으로 받았을 때 41230을 리턴해야 합니다
-      
+      throw new Error; //it을 작성할 때부터는 throw new Error를 지워주시면 됩니다.
     });
     
     it("should find the 10001st prime", function () {
       // 5번 문제
       //10000번째 Prime Number는 104723입니다. 10001번째는 무엇일까요?
-
-      
+      throw new Error; //it을 작성할 때부터는 throw new Error를 지워주시면 됩니다.
     });
 })
 
