@@ -1,134 +1,65 @@
 const expect = chai.expect;
 const should = chai.should();
 
-function findLargestPrimeFactor(number) {
-    let composite = number;
-    let divideNum = 2;
-    while (number > 1) {
-      if (number % divideNum === 0) {
-        number /= divideNum;
-      } else {
-        divideNum++;
-      }
-    }
-    return divideNum;
+// 되도록이면 should로 테스트를 진행해주시기 바랍니다. 이상하게 expect가 잘 안 먹히는 경우가 있습니다 ㅠㅠ
+// 제가 푼 정답과 test 내용이 궁금하면 solution.js 파일을 참조해주세요.(참고로 저도 틀렸을 수 있으니 이점 양해 바래요 ㅠㅠ)
+
+const findLargestPrimeFactor = (number) => {
+  //1번 문제 함수명입니다. 1번 문제의 조건대로 함수를 작성하고, 밑에서 테스트 해보세요!
+ 
 }
 
 function largestPalindrome() {
-  let value = 0;
-  let reverseVal = ''
-  let finalVal = 0;
-  for (i = 999; i >= 100; i--) {
-    for (j = 999; j >= 100; j--) {
-      value = i * j;
-      reverseVal = String(value).split("").reverse().join("");
-      if (reverseVal === String(value) && value > finalVal) {
-        finalVal =  value;
-      }
-    }
-  }
-  return finalVal;
+  //2번 문제 함수명입니다. 1번 문제의 조건대로 함수를 작성하고, 밑에서 테스트 해보세요!
+
 }
 
 
+function leastCommonMultiple(number) {
+  //3번 문제 함수명입니다. 1번 문제의 조건대로 함수를 작성하고, 밑에서 테스트 해보세요!
 
+}
 
+function sumSquare(number) {
+  //4번 문제 함수명입니다. 1번 문제의 조건대로 함수를 작성하고, 밑에서 테스트 해보세요!
+
+};
+
+function findTenThousandOnePrime (number) {
+  //5번 문제 함수명입니다. 1번 문제의 조건대로 함수를 작성하고, 밑에서 테스트 해보세요!
+
+}
 
 describe("Uncomment Test", function() {
     it("should find the largest prime factor of a composite number", function () {
-        findLargestPrimeFactor(20).should.equal(5);
-        findLargestPrimeFactor(35).should.equal(7);
-        findLargestPrimeFactor(55).should.equal(11);
+        // 1번 문제
+        // 36번 라인과 같이 function을 생성하고 그 function이 올바른 값을 리턴하는지 확인하시면 됩니다.
+        // (주석을 삭제해보고 testrunner.html을 확인해주세요)
+        // findLargestPrimeFactor(20).should.equal(5);
       })
 
     it("should find the largest palindrome made from the product of two 3 digit numbers", function () {
-      largestPalindrome().should.equal(906609);
+      // 2번 문제
+      // 3자릿 수 두 개를 곱하여 가장 큰 Palindrome 값은 906609입니다.
+      
     })
     
-    
-    it("should find the smallest number divisible by each of the numbers 1 to 20", function(number) {
-      // type 20 into the function parameter "number" and it will do!//
-      function checkPrime (num) {
-        let sqrt = parseInt(Math.sqrt(num));
-    
-        if (num === 2) {
-          return true;
-        }
-    
-        if (num % 2 === 0) {
-          return false;
-        }
-    
-        for (let i = 3; i <= sqrt; i += 2) {
-          if (num % i === 0) {
-            return false;
-          }
-        }
-        return true;
-      }
-      let before = 2;
-      for (let i = 3; i <= number; i++) {
-        
-        if (checkPrime(i)) {
-          before = before * i;
-        } else if(before % i !== 0) {
-          let value1 = before;
-          let value2 = i;
-          while(value2 !== 0) {
-            let r = value1 % value2;
-            value1 = value2;
-            value2 = r;
-          }
-          before = before * i / value1;
-          }
-        }
-        return before;
-      }
-      //it will return 232,792,560!!//
-    );
-    
-    it("should find the difference between the sum of the squares and the square of the sums", function (number) {
-      // let finalNum = ((3 * number**2 + 2 * number) * (1 - number**2) / 12)
-      let squaredArray = [];
-      let sumOfNums = 0;
-      for (i = 1; i <= number; i++) {
-        squaredArray.push(i * i);
-        sumOfNums += i
-      }
-      let sumOfSquares = squaredArray.reduce((arr, curr) => {
-        return arr + curr;
-      }, 0);
-      let squareOfSums = sumOfNums ** 2;
-      return Math.abs(sumOfSquares - squareOfSums);
+    it("should find the smallest number divisible by each of the numbers 1 to 20", function() {
+      // 3번 문제 : 최소공배수를 구하는 문제입니다.  20을 입력받았을 때 232792560 값이 리턴되어야 합니다.
+      
     });
     
-    it("should find the 10001st prime", function (number) {
-      let primeArray = [];
-      function checkPrime (num) {
-        let sqrt = parseInt(Math.sqrt(num));
+    it("should find the difference between the sum of the squares and the square of the sums", function () {
+      // 4번 문제
+      // 20이라는 값을 함수가 인자값으로 받았을 때 41230을 리턴해야 합니다
+      
+    });
     
-        if (num === 2) {
-          return true;
-        }
-    
-        if (num % 2 === 0) {
-          return false;
-        }
-    
-        for (let i = 3; i <= sqrt; i += 2) {
-          if (num % i === 0) {
-            return false;
-          }
-        }
-        return true;
-      }
-      let inputVal = 0;
-      while(primeArray.length <= number) {
-        if (checkPrime(inputVal)) {
-          primeArray.push(inputVal);
-        }
-        inputVal++
-      }
-      return primeArray[number - 1]
+    it("should find the 10001st prime", function () {
+      // 5번 문제
+      //10000번째 Prime Number는 104723입니다. 10001번째는 무엇일까요?
+
+      
     });
 })
+
